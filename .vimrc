@@ -7,6 +7,13 @@ set colorcolumn=81          " Red highlighting for culmn 81
 set wildmenu                " Tab completion in the command line
 set scrolloff=2             " Keep two lines from edge of screen
 
+" --------------------------  Status bar
+set laststatus=2            " Keep the status bar visible
+set statusline=
+set statusline+=%<%f        " Show status filename
+set statusline+=\           " Space
+set statusline+=%r          " Read only status
+
 " --------------------------  Tabbing
 set autoindent
 set tabstop=8
