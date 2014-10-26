@@ -3,6 +3,7 @@ syntax on
 match ErrorMsg '\s\+$'      " Highlight trailing whitespace
 set number
 set hlsearch                " Highlight search results
+set incsearch               " Highlight search as it's typed
 set colorcolumn=81          " Red highlighting for culmn 81
 set wildmenu                " Tab completion in the command line
 set scrolloff=2             " Keep two lines from edge of screen
