@@ -1,5 +1,6 @@
 execute pathogen#infect()
 
+set backspace=indent,eol,start
 " ----------------------------------  General
 syntax on                           " Show syntax highlighting
 match ErrorMsg '\s\+$'              " Highlight trailing whitespace
@@ -27,6 +28,10 @@ filetype indent on
 
 " ----------------------------------  Editing code
 let g:syntastic_html_checkers = []  " Don't try to validate html
+set statusline+=%#warningmsg#
+set statusline+=%*
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 set suffixes+=.pyc,.pyo             " Ignore compuled Python
 set wildignore+=*.pyc,*.pyo
 set suffixes+=.class                " Ignore Java class files
