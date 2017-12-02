@@ -3,7 +3,7 @@ dotfiles
 
 These are my configuration files! Nice.
 
-Vimrc borrows heavily from [Marius Gedminas](https://gedmin.as/),
+The .vimrc file is based on [Marius Gedminas'](https://github.com/mgedmin/dotvim/blob/master/vimrc),
 and depends on [Pathogen](https://github.com/tpope/vim-pathogen) and [Syntastic](https://github.com/scrooloose/syntastic).
 
 Git branch autocomplete installed with:
