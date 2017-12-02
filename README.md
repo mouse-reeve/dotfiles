@@ -1,9 +1,8 @@
 dotfiles
 ========
 
-Settings files
+These are my configuration files! Nice.
 
-With thanks to [Marius Gedminas](https://gedmin.as/) whose .vimrc file I referenced heavily
-
-I extend vim with [Pathogen](https://github.com/tpope/vim-pathogen) and [Syntastic](https://github.com/scrooloose/syntastic)
+Vimrc borrows heavily from [Marius Gedminas](https://gedmin.as/),
+and depends on [Pathogen](https://github.com/tpope/vim-pathogen) and [Syntastic](https://github.com/scrooloose/syntastic)
 
