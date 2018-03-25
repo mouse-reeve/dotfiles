@@ -1,6 +1,5 @@
 execute pathogen#infect()
 
-set backspace=indent,eol,start
 " ----------------------------------  General
 syntax on                           " Show syntax highlighting
 match ErrorMsg '\s\+$'              " Highlight trailing whitespace
@@ -9,6 +8,7 @@ set hlsearch                        " Highlight search results
 set incsearch                       " Highlight search as it's typed
 set wildmenu                        " Tab completion in the command line
 set scrolloff=2                     " Keep two lines from edge of screen
+set backspace=indent,eol,start
 filetype plugin on
 
 " ----------------------------------  Status bar
@@ -33,7 +33,10 @@ set statusline+=%#warningmsg#
 set statusline+=%*
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-set suffixes+=.pyc,.pyo             " Ignore compiled Python
+let g:syntastic_java_javac_config_file_enabled = 1
+let g:syntastic_html_checkers = []
+set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
+set suffixes+=.pyc,.pyo             " Ignore compuled Python
 set wildignore+=*.pyc,*.pyo
 set suffixes+=.class                " Ignore Java class files
 set wildignore+=local/**            " For virtualenv
@@ -44,12 +47,12 @@ if has("eval")
 endif
 
 " ----------------------------------  Tab complete
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-n>"
-    endif
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
 endfunction
-inoremap <tab> <c-r>=InsertTabWrapper()<cr>
+:inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+:set dictionary="/usr/dict/words"
