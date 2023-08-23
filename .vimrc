@@ -6,6 +6,7 @@ match ErrorMsg '\s\+$'              " Highlight trailing whitespace
 set number
 set hlsearch                        " Highlight search results
 set incsearch                       " Highlight search as it's typed
+set wildmode=longest,list,full
 set wildmenu                        " Tab completion in the command line
 set scrolloff=2                     " Keep two lines from edge of screen
 set backspace=indent,eol,start
@@ -32,9 +33,8 @@ let g:syntastic_html_checkers = []  " Don't try to validate html
 set statusline+=%#warningmsg#
 set statusline+=%*
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 let g:syntastic_java_javac_config_file_enabled = 1
-let g:syntastic_html_checkers = []
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 set suffixes+=.pyc,.pyo             " Ignore compuled Python
 set wildignore+=*.pyc,*.pyo
